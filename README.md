@@ -75,6 +75,6 @@ atividade2Devops/
 
 ## 📄 Licença
 
-Este projeto foi desenvolvido para fins acadêmicos como parte da disciplina de DevOps na **Jala University**.
+Este projeto foi desenvolvido para fins acadêmico e profissional.
 
 © 2026 Felipe Alves. Todos os direitos reservados.
