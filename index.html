@@ -1,100 +1,301 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfólio de Felipe Alves, Engenheiro de Software e DevOps." />
+  <meta name="description" content="Portfólio de Felipe Alves — Desenvolvedor Back-end e DevOps (Node.js, TypeScript, Java)." />
   <title>Felipe Alves | Portfólio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Sans+3:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="style.css" />
+  <script>
+    // Define theme early to avoid flash. Respects system preference and saved choice.
+    (function() {
+      try {
+        const saved = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) { /* ignore */ }
+    })();
+  </script>
 </head>
 <body>
   <header class="header">
-    <div class="container nav">
-      <a href="#" class="logo">Felipe Alves</a>
-      <nav>
+    <div class="container header-row">
+      <div class="brand">
+        <a href="#" class="logo">Felipe Alves</a>
+        <p class="muted">Recife, PE — Back-end & DevOps</p>
+      </div>
+
+      <nav class="main-nav" aria-label="Main navigation">
         <ul class="nav-list">
           <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
           <li><a href="#habilidades">Habilidades</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
+
+      <div class="header-actions">
+        <div class="socials">
+          <a href="https://github.com/FelipeDevRec" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" />
+          </a>
+          <a href="https://www.linkedin.com/in/devfelipe-alves/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="https://cdn.simpleicons.org/linkedin/0A66C2" alt="LinkedIn" />
+          </a>
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema" title="Alternar tema">
+          <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4V2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 22v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 12h-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 5L3.5 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.5 20.5L19 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 19L3.5 20.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.5 3.5L19 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-content">
-        <div class="hero-text">
+      <div class="container hero-inner">
+        <div class="hero-card">
           <p class="tag">Portfólio Profissional</p>
-          <h1>Felipe Alves</h1>
-          <h2>Engenheiro de Software e DevOps</h2>
+          <h1 class="hero-title">Felipe Alves</h1>
+          <h2 class="hero-sub">Desenvolvedor Back-end & DevOps — Node.js · TypeScript · Java</h2>
+
           <p class="description">
-            Desenvolvedor focado em criar soluções modernas, escaláveis e eficientes,
-            com interesse em backend, infraestrutura e boas práticas de desenvolvimento.
+            Desenvolvo APIs e sistemas escaláveis com foco em performance, segurança e infraestrutura automatizada. Trabalho com Node.js (Express), TypeScript, Java (Spring Boot) e bancos como PostgreSQL/Supabase.
+            Disponível para projetos remotos e contratações locais em Recife, PE.
           </p>
 
-          <div class="hero-buttons">
+          <div class="badges-row" aria-hidden>
+            <span class="badge">Node.js</span>
+            <span class="badge">Express</span>
+            <span class="badge">Supabase</span>
+            <span class="badge">TypeScript</span>
+            <span class="badge">Java</span>
+            <span class="badge">Spring Boot</span>
+          </div>
+
+          <div class="hero-actions">
             <a href="#contato" class="btn btn-primary">Entrar em contato</a>
-            <a href="#sobre" class="btn btn-secondary">Saiba mais</a>
+            <a href="#projetos" class="btn btn-secondary">Ver projetos</a>
           </div>
         </div>
 
-        <div class="photo-card" aria-label="Espaço reservado para foto de Felipe Alves">
-          <div class="photo-placeholder">
-            <img src="eu.jpeg" alt="Foto de Felipe Alves" class="profile-photo" />
+        <aside class="profile-card" aria-label="Foto e contatos">
+          <div class="photo-wrap">
+            <img src="eu.jpeg" alt="Foto de Felipe Alves" class="profile-photo"/>
           </div>
-        </div>
+
+          <div class="profile-links">
+            <a href="mailto:felipe.alvescc16@gmail.com" class="link-card">felipe.alvescc16@gmail.com</a>
+            <a href="https://wa.me/5581997208700" target="_blank" rel="noopener noreferrer" class="link-card">WhatsApp</a>
+          </div>
+        </aside>
       </div>
     </section>
 
     <section id="sobre" class="section">
       <div class="container">
         <h2 class="section-title">Sobre mim</h2>
-        <p class="section-text">
-          Sou Felipe Alves, Engenheiro de Software e profissional com foco em DevOps.
-          Gosto de desenvolver aplicações robustas, automatizar processos e contribuir
-          para ambientes mais seguros, organizados e escaláveis.
-        </p>
-      </div>
-    </section>
+        <div class="section-grid">
+          <div>
+            <p class="section-text">
+              Sou desenvolvedor back-end com forte interesse em Node.js, Express, Java e Spring Boot. Trabalho com bancos de dados relacionais e não-relacionais (PostgreSQL, Supabase, MongoDB) e foco em arquitetura de APIs, performance e observabilidade.
+            </p>
 
-    <section id="habilidades" class="section section-alt">
-      <div class="container">
-        <h2 class="section-title">Habilidades</h2>
-        <div class="skills">
-          <div class="skill-card">Desenvolvimento Back-end</div>
-          <div class="skill-card">APIs e Integrações</div>
-          <div class="skill-card">DevOps e Automação</div>
-          <div class="skill-card">Docker e Containers</div>
-          <div class="skill-card">CI/CD</div>
-          <div class="skill-card">Banco de Dados</div>
+            <p class="section-text">
+              Estudo continuamente: possuo múltiplas formações (Engenharia de Software — Jala University; ADS — UNIGRANDE; Licenciatura em Computação — UFRPE; formação em Back-end pela Cubos Academy) e busco aplicar esse conhecimento em projetos reais e infraestruturas escaláveis.
+            </p>
+          </div>
+
+          <div>
+            <ul class="about-list">
+              <li><strong>Foco:</strong> APIs robustas, sistemas escaláveis e automação de infraestrutura</li>
+              <li><strong>Stack:</strong> Node.js, Express, TypeScript, Java, Spring Boot, PostgreSQL/Supabase</li>
+              <li><strong>Local:</strong> Recife, Pernambuco — disponível remoto ou local</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="contato" class="section">
+    <section id="projetos" class="section section-alt">
+      <div class="container">
+        <h2 class="section-title">Projetos</h2>
+        <p class="section-text">Projetos selecionados com foco em backend, APIs e deploys.</p>
+
+        <div class="projects-grid">
+          <article class="project-card" data-animate>
+            <div class="project-meta">
+              <h3>TaskFlow</h3>
+              <p class="muted">Atividade acadêmica que evoluiu para projeto de portfólio: gerenciamento de tarefas com backend em Node.js e banco Supabase.</p>
+            </div>
+
+            <div class="project-stack">
+              <img src="https://cdn.simpleicons.org/node-dot-js/339933" alt="Node.js" title="Node.js" />
+              <img src="https://cdn.simpleicons.org/express/000000" alt="Express" title="Express" />
+              <img src="https://cdn.simpleicons.org/supabase/3ecf8e" alt="Supabase" title="Supabase" />
+              <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" title="HTML5" />
+              <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS3" title="CSS3" />
+            </div>
+
+            <div class="project-actions">
+              <a class="btn btn-outline" href="https://psicologia-project1-good-uiux.vercel.app/login.html" target="_blank" rel="noopener noreferrer">Ver projeto</a>
+              <a class="btn" href="https://github.com/FelipeDevRec" target="_blank" rel="noopener noreferrer">Ver código</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-animate>
+            <div class="project-meta">
+              <h3>Mais projetos</h3>
+              <p class="muted">Veja outros projetos e contribuições no meu GitHub.</p>
+            </div>
+            <div class="project-actions">
+              <a class="btn btn-outline" href="https://github.com/FelipeDevRec" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades" class="section">
+      <div class="container">
+        <h2 class="section-title">Habilidades Técnicas</h2>
+        <p class="section-text">Grade de tecnologias com ícones — foco prático no que uso em projetos.</p>
+
+        <div class="tech-grid" role="list">
+          <div class="tech-item" data-animate>
+            <img src="https://cdn.simpleicons.org/node.js/339933" alt="Node.js" />
+            <div class="tech-name">Node.js</div>
+          </div>
+          <div class="tech-item" data-animate>
+            <img src="https://cdn.simpleicons.org/express/000000" alt="Express" />
+            <div class="tech-name">Express.js</div>
+          </div>
+          <div class="tech-item" data-animate>
+            <img src="https://cdn.simpleicons.org/java/007396" alt="Java" />
+            <div class="tech-name">Java / Spring Boot</div>
+          </div>
+          <div class="tech-item" data-animate>
+            <img src="https://cdn.simpleicons.org/typescript/3178C6" alt="TypeScript" />
+            <div class="tech-name">TypeScript</div>
+          </div>
+          <div class="tech-item" data-animate>
+            <img src="https://cdn.simpleicons.org/postgresql/336791" alt="PostgreSQL" />
+            <div class="tech-name">PostgreSQL</div>
+          </div>
+          <div class="tech-item" data-animate>
+            <img src="https://cdn.simpleicons.org/supabase/3ecf8e" alt="Supabase" />
+            <div class="tech-name">Supabase</div>
+          </div>
+          <div class="tech-item" data-animate>
+            <img src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5" />
+            <div class="tech-name">HTML5</div>
+          </div>
+          <div class="tech-item" data-animate>
+            <img src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS3" />
+            <div class="tech-name">CSS3</div>
+          </div>
+          <div class="tech-item" data-animate>
+            <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub" />
+            <div class="tech-name">Git / GitHub</div>
+          </div>
+          <div class="tech-item" data-animate>
+            <img src="https://cdn.simpleicons.org/vercel/000000" alt="Vercel" />
+            <div class="tech-name">Vercel</div>
+          </div>
+          <div class="tech-item" data-animate>
+            <img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker" />
+            <div class="tech-name">Docker</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section section-alt">
       <div class="container">
         <h2 class="section-title">Contato</h2>
-        <p class="section-text">
-          Entre em contato pelo e-mmail "felipe.alvescc16@gmail.com".
-        </p>
-        <a href="mailto:felipe.alvescc16@gmail.com" class="btn btn-primary">Enviar e-mail</a>
+        <p class="section-text">Vamos conversar — escolha o canal que preferir.</p>
+
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:felipe.alvescc16@gmail.com" rel="noopener noreferrer">
+            <img src="https://cdn.simpleicons.org/mail/d14836" alt="Email" />
+            <div>
+              <div class="contact-label">E-mail</div>
+              <div class="contact-info">felipe.alvescc16@gmail.com</div>
+            </div>
+          </a>
+
+          <a class="contact-card" href="https://www.linkedin.com/in/devfelipe-alves/" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.simpleicons.org/linkedin/0A66C2" alt="LinkedIn" />
+            <div>
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-info">devfelipe-alves</div>
+            </div>
+          </a>
+
+          <a class="contact-card" href="https://github.com/FelipeDevRec" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.simpleicons.org/github/ffffff" alt="GitHub" />
+            <div>
+              <div class="contact-label">GitHub</div>
+              <div class="contact-info">FelipeDevRec</div>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>© 2026 Felipe Alves. Todos os direitos reservados.</p>
+    <div class="container footer-row">
+      <div>
+        <p>© 2026 Felipe Alves. Todos os direitos reservados.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="https://github.com/FelipeDevRec" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/devfelipe-alves/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
     </div>
   </footer>
+
+  <script>
+    // Theme toggle functionality
+    (function() {
+      const btn = document.getElementById('theme-toggle');
+      if(!btn) return;
+
+      function setTheme(t) {
+        document.documentElement.setAttribute('data-theme', t);
+        try { localStorage.setItem('theme', t); } catch (e) {}
+      }
+
+      btn.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        setTheme(current === 'dark' ? 'light' : 'dark');
+      });
+    })();
+
+    // IntersectionObserver for fade-in animations
+    (function() {
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            io.unobserve(entry.target);
+          }
+        });
+      }, {threshold: 0.12});
+
+      document.querySelectorAll('[data-animate]').forEach(el => io.observe(el));
+      document.querySelectorAll('.tech-item, .section').forEach(el => io.observe(el));
+    })();
+  </script>
 </body>
 </html>
