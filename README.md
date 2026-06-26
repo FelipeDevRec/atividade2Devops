@@ -1,80 +1,32 @@
-# 👨‍💻 Felipe Alves | Portfólio Pessoal
+# Portfólio — Felipe Alves
 
-Portfólio profissional desenvolvido como atividade prática da disciplina de **DevOps**, apresentando habilidades, experiências e formas de contato de Felipe Alves — Engenheiro de Software com foco em Back-end e DevOps.
+Versão atualizada do portfólio pessoal de Felipe Alves (Desenvolvedor Back-end & DevOps).
 
----
+Principais arquivos:
 
-## 🚀 Sobre o Projeto
+- `index.html` — Página principal do portfólio
+- `style.css` — Estilos com suporte a Light/Dark mode
 
-Este projeto é uma página web estática que serve como portfólio profissional. Foi construído com HTML5 e CSS3 puros, sem dependências de frameworks JavaScript, com foco em boas práticas de marcação semântica, acessibilidade e design responsivo.
+Como abrir localmente:
 
-### Seções da página
+1. Abrir `index.html` no seu navegador (duplo-clique) ou servir via um servidor estático.
 
-- **Hero** — Apresentação com nome, título e botões de ação
-- **Sobre mim** — Breve descrição profissional
-- **Habilidades** — Cards com as principais competências técnicas
-- **Contato** — Link direto para envio de e-mail
+Exemplo usando Python (recomendado para desenvolvimento):
 
----
-
-## 🛠️ Tecnologias Utilizadas
-
-| Tecnologia | Descrição |
-|---|---|
-| HTML5 | Estrutura semântica da página |
-| CSS3 | Estilização, responsividade e layout |
-| Google Fonts | Tipografia (Outfit + Source Sans 3) |
-
----
-
-## 📁 Estrutura do Repositório
-
-```
-atividade2Devops/
-├── index.html    # Estrutura principal da página
-├── style.css     # Estilos e layout
-├── eu.jpeg       # Foto de perfil
-└── README.md     # Documentação do projeto
+```bash
+# Python 3
+python -m http.server 8000
+# então abra http://localhost:8000
 ```
 
----
+Links relevantes:
 
-## ▶️ Como Executar Localmente
+- LinkedIn: https://www.linkedin.com/in/devfelipe-alves/
+- GitHub: https://github.com/FelipeDevRec
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/FelipeDevRec/atividade2Devops.git
-   ```
+Observações:
 
-2. Acesse a pasta do projeto:
-   ```bash
-   cd atividade2Devops
-   ```
+- Dark mode respeita `prefers-color-scheme` e pode ser alternado pelo botão no header.
+- Animações respeitam `prefers-reduced-motion`.
 
-3. Abra o arquivo `index.html` diretamente no navegador ou utilize uma extensão como o **Live Server** no VS Code.
-
----
-
-## ✨ Funcionalidades
-
-- ✅ Design responsivo e moderno
-- ✅ Navegação suave entre as seções
-- ✅ Cards de habilidades: Back-end, APIs, DevOps, Docker, CI/CD, Banco de Dados
-- ✅ Botão de contato via e-mail integrado
-- ✅ Código semântico e acessível
-
----
-
-## 📬 Contato
-
-- 📧 E-mail: [felipe.alvescc16@gmail.com](mailto:felipe.alvescc16@gmail.com)
-- 💼 LinkedIn: [devfelipe-alves](https://www.linkedin.com/in/devfelipe-alves/)
-- 📸 Instagram: [@ifelipi](https://www.instagram.com/ifelipi/)
-
----
-
-## 📄 Licença
-
-Este projeto foi desenvolvido para fins acadêmico e profissional.
-
-© 2026 Felipe Alves. Todos os direitos reservados.
+2026 • Felipe Alves
