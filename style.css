@@ -49,20 +49,22 @@ ul { list-style: none; }
 
 /* Header */
 .header { position: sticky; top: 0; z-index: 40; background: color-mix(in srgb, var(--bg) 80%, transparent); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); }
-.header-row { display:flex; gap:1rem; align-items:center; justify-content:space-between; padding:0.9rem 0; }
+.header-row { display:flex; gap:1rem; align-items:center; justify-content:space-between; padding:0.9rem 0; flex-wrap:wrap; }
+.brand { min-width:0; }
 .brand .logo { font-family: Outfit, sans-serif; font-weight:700; font-size:1.05rem; }
 .muted { color: var(--muted); font-size:0.9rem; }
 .main-nav .nav-list { display:flex; gap:1rem; align-items:center; }
 .nav-list a { padding:0.45rem 0.6rem; font-weight:600; color:var(--muted); border-radius:var(--radius-sm); transition: color .18s ease, background .18s ease; }
 .nav-list a:hover { color: var(--primary); }
 
-.header-actions { display:flex; gap:0.6rem; align-items:center; }
+.header-actions { display:flex; gap:0.6rem; align-items:center; margin-left:auto; }
+.socials { display:flex; gap:0.35rem; align-items:center; }
 .socials img { width:18px; height:18px; display:block; filter: var(--social-filter, none); }
-.socials a { display:inline-flex; align-items:center; gap:0.5rem; }
+.socials a { display:inline-flex; align-items:center; justify-content:center; width:2.2rem; height:2.2rem; border:1px solid var(--border); border-radius:999px; background: rgba(255,255,255,0.03); }
 
-.theme-toggle { background:transparent; border:1px solid var(--border); padding:0.45rem; border-radius:8px; display:inline-flex; align-items:center; gap:6px; color:var(--muted); cursor:pointer; transition: all 220ms ease; }
+.theme-toggle { background:transparent; border:1px solid var(--border); width:2.2rem; height:2.2rem; padding:0; border-radius:999px; display:inline-flex; align-items:center; justify-content:center; color:var(--muted); cursor:pointer; transition: all 220ms ease; }
 .theme-toggle:hover { transform: translateY(-2px); }
-.theme-toggle svg { display:block; }
+.theme-toggle svg { display:block; width:18px; height:18px; }
 
 /* Hero */
 .hero { padding:3.5rem 0; display:block; }
@@ -151,9 +153,23 @@ ul { list-style: none; }
   * { animation: none !important; transition: none !important; }
 }
 
-@media (max-width:520px) {
+@media (max-width:640px) {
   .nav-list { display:none; }
-  .header-row { grid-template-columns: 1fr auto; }
+  .header-row { gap:0.65rem; padding:0.8rem 0; }
+  .brand {
+    flex: 1 1 100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+  .brand .muted { display:none; }
+  .brand .logo { font-size:0.98rem; }
+  .header-actions { margin-left:0; }
+  .socials a,
+  .theme-toggle {
+    width:2rem;
+    height:2rem;
+  }
   .hero { padding:2.2rem 0; }
   .btn { width:100%; text-align:center; }
 }
